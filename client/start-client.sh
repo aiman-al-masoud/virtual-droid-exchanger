@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# IP="10.0.2.2" # deployed on VM
-IP="127.0.0.1"  # for testing on host OS
+# IP="127.0.0.1"  # for testing on host OS
+IP="10.0.2.2" # deployed on VM
 PORT="8000"
-DEST_FOLDER="/home/aiman/Desktop/get-from-host"
-SRC_FOLDER="/home/aiman/Desktop/push-to-host"
-
+DEST_FOLDER=$HOME/get-from-host
+SRC_FOLDER=$HOME/push-to-host
 
 function download(){
     cd $DEST_FOLDER
@@ -61,7 +60,6 @@ do
     if [ "$src_folder_hash" != "$newHash" ]; then
 
         # upload       
-        echo "I have to upload!" 
         cd $SRC_FOLDER
         for f in $(ls)
         do 

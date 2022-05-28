@@ -6,8 +6,16 @@ from wd import WatchDog
 import shutil
 
 app = Flask(__name__)
-PUSH_TO_DROID = '/home/aiman/Desktop/push-to-droid'
-UPLOAD_FOLDER = '/home/aiman/Desktop/get-from-droid'
+PUSH_TO_DROID = os.path.join( os.path.expanduser('~'), "push-to-droid" )
+UPLOAD_FOLDER = os.path.join( os.path.expanduser('~'), "get-from-droid" )
+
+if not os.path.exists(PUSH_TO_DROID):
+    os.makedirs(PUSH_TO_DROID)
+
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 UPDATES_AVAILABLE=False
 
@@ -57,9 +65,6 @@ def set_updates_available():
 if __name__ == '__main__':
 
     def on_anything(e):
-        # # ignore hidden and tmp files
-        # if (e.src_path[0] ==  ".")  or ("swp" in e.src_path):
-        #     return 
         set_updates_available()
 
     wd = WatchDog.get(PUSH_TO_DROID, on_created=on_anything, on_modified=on_anything)
