@@ -1,4 +1,6 @@
-#  🚧 WORK IN PROGRESS 🚧 ...
+# droid
+
+A simple http server that acts as a bridge to exchange files between an Android VM and the host OS.
 
 # Setup
 
@@ -6,17 +8,20 @@
 
 1. Clone this repository
 
+2. Run the Python server 
+
 ```bash
-git clone link-from-github
+cd server/
+python3 __main__.py
 ```
 
-2. Directories...
+3. Check that the following directories have been created
 
-3. Run the Python server 
-
-```bash
-cd server
-python3 app.py
+``` bash
+/home/username/Desktop/push-to-droid
+bash: /home/username/Desktop/push-to-droid: Is a directory
+/home/username/Desktop/get-from-droid
+bash: /home/username/Desktop/get-from-droid: Is a directory
 ```
 
 ## On your Android VM
@@ -25,7 +30,7 @@ python3 app.py
 
 2. Fire up Termux and install the following dependencies:
 
-```bash
+``` bash
 pkg install git
 pkg install wget
 pkg install zip
@@ -33,17 +38,27 @@ pkg install zip
 
 3. Clone this repository
 
+4. Run the client script
+
 ```bash
-git clone link-from-github
+cd client/
+./start-client.sh
 ```
+5. Check that the following directories have been created
 
-4. Edit client.sh and make sure the directories `get-from-host` and  `push-to-host` exist.
-
-5. Run the client script
-
+``` bash
+/data/data/com.termux/files/home/push-to-host
+/data/data/com.termux/files/home/push-to-host: Is a directory
+/data/data/com.termux/files/home/get-from-host
+/data/data/com.termux/files/home/get-from-host: Is a directory
 ```
-chmod +x client.sh
-./client.sh
-```
+6. Try it out
 
-You're ready 
+### Android VM -> Host
+
+On your Android VM, copy a file into `push-to-host/`, then go to your host OS and check that it's been copied to `get-from-droid/`.
+
+### Host -> Android VM
+
+On your host OS, copy a file into `push-to-droid/`, then go to your Android VM and check that it's been copied to `get-from-host`.
+
