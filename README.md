@@ -62,3 +62,9 @@ On your Android VM, copy a file into `push-to-host/`, then go to your host OS an
 
 On your host OS, copy a file into `push-to-droid/`, then go to your Android VM and check that it's been copied to `get-from-host`.
 
+## Bonus
+To avoid having to run `start-client.sh` on a separate shell session every time you power on your VM, try saving its state. Or adding it as an <a href="https://wiki.termux.com/wiki/Termux:Boot">"on boot script"</a> in Termux (didn't work properly for me).
+
+
+
+
