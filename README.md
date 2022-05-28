@@ -27,7 +27,7 @@ bash: /home/username/Desktop/get-from-droid: Is a directory
 
 ## On your Android VM
 
-1. Install Termux on your Android VM
+1. Install <a href="https://termux.com/">Termux</a> on your Android VM
 
 2. Fire up Termux and install the following dependencies:
 
