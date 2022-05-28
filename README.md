@@ -1,6 +1,7 @@
-# droid
+# virtual-droid-exchanger
 
-A simple http server that acts as a bridge to exchange files between an Android VM and the host OS.
+A stupid hack to exchange files between an Android VM and the host OS. (Without using shared folders or ssh).
+
 
 # Setup
 
