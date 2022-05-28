@@ -11,9 +11,10 @@ mkdir DEST_FOLDER  SRC_FOLDER
 function download(){
     cd $DEST_FOLDER
     local PAGE="download-file"
-    wget -O packet.zip http://${IP}:${PORT}/${PAGE}  2> buf.txt
+    wget --quiet -O packet.zip http://${IP}:${PORT}/${PAGE}  2> buf.txt
     cat buf.txt
     rm buf.txt
+    rm *log*
     unzip packet.zip
     cd -
 }
@@ -22,7 +23,8 @@ function checkUpdates(){
     local PAGE="check-updates"
     wget  http://${IP}:${PORT}/${PAGE}  2> buf.txt
     cat check-updates
-    rm check-updates buf.txt
+    rm *log*
+    rm check-updates* buf.txt
 }
 
 function upload(){
