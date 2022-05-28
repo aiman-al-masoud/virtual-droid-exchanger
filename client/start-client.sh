@@ -6,7 +6,7 @@ PORT="8000"
 DEST_FOLDER=$HOME/get-from-host
 SRC_FOLDER=$HOME/push-to-host
 
-mkdir DEST_FOLDER  SRC_FOLDER
+mkdir $DEST_FOLDER  $SRC_FOLDER
 
 function download(){
     cd $DEST_FOLDER
