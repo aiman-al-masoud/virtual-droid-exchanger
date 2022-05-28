@@ -6,8 +6,8 @@ from wd import WatchDog
 import shutil
 
 app = Flask(__name__)
-PUSH_TO_DROID = os.path.join( os.path.expanduser('~'), "push-to-droid" )
-UPLOAD_FOLDER = os.path.join( os.path.expanduser('~'), "get-from-droid" )
+PUSH_TO_DROID = os.path.join( os.path.expanduser('~'), "Desktop", "push-to-droid" )
+UPLOAD_FOLDER = os.path.join( os.path.expanduser('~'),"Desktop", "get-from-droid" )
 
 if not os.path.exists(PUSH_TO_DROID):
     os.makedirs(PUSH_TO_DROID)
@@ -18,7 +18,6 @@ if not os.path.exists(UPLOAD_FOLDER):
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 UPDATES_AVAILABLE=False
-
 
 @app.route("/")
 def index():
