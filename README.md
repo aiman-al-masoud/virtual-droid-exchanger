@@ -1,6 +1,6 @@
 # virtual-droid-exchanger
 
-A stupid hack to exchange files between an Android VM and the host OS. (Without using shared folders or ssh).
+A stupid hack to exchange files between an Android VM and the host OS. (Without using shared folders or ssh or the adb).
 
 
 # Setup
